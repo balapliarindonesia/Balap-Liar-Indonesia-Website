@@ -22,7 +22,7 @@ const teamMembers = [
     { name: "Ixillent", image: "images/RIVAL_27.png" },
     { name: "Shiro", image: "images/shiro.png" },
     { name: "PLYRS", image: "images/plyrs.png" },
-    { name: "Kucing", image: "images/RIVAL_30.png" },
+    { name: "Kucing", image: "images/kucing.png" },
     { name: "Bertus", image: "images/RIVAL_31.png" },
     { name: "PowerPlay", image: "images/RIVAL_32.png" }
 ];
@@ -49,3 +49,4 @@ links.forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
