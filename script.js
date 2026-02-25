@@ -13,7 +13,7 @@ const teamMembers = [
     { name: "GendZo", image: "images/RIVAL_18.png" },
     { name: "Veetec", image: "images/RIVAL_19.png" },
     { name: "Kenja Mago", image: "images/RIVAL_20.png" },
-    { name: "Desanosan24", image: "images/RIVAL_21.png" },
+    { name: "Desanosan", image: "images/RIVAL_21.png" },
     { name: "Kudungga", image: "images/RIVAL_22.png" },
     { name: "Arogan", image: "images/RIVAL_23.png" },
     { name: "Initial R", image: "images/RIVAL_24.png" },
@@ -49,3 +49,4 @@ links.forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
