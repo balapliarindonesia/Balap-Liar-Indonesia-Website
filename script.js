@@ -22,9 +22,9 @@ const teamMembers = [
     { name: "Ixillent", image: "images/RIVAL_27.png" },
     { name: "Shiro", image: "images/shiro.png" },
     { name: "PLYRS", image: "images/plyrs.png" },
-    { name: "Member 15", image: "images/RIVAL_30.png" },
-    { name: "Member 16", image: "images/RIVAL_31.png" },
-    { name: "Member 17", image: "images/RIVAL_32.png" }
+    { name: "Kucing", image: "images/RIVAL_30.png" },
+    { name: "Bertus", image: "images/RIVAL_31.png" },
+    { name: "PowerPlay", image: "images/RIVAL_32.png" }
 ];
 
 const teamGrid = document.getElementById('team-grid');
@@ -49,4 +49,3 @@ links.forEach(link => {
         navLinks.classList.remove('active');
     });
 });
-
