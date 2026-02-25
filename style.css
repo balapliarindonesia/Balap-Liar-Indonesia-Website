@@ -197,14 +197,11 @@ section {
 
 .team-card img {
     width: 100%;
+    aspect-ratio: 1 / 1; /* Memaksa gambar menjadi kotak sempurna */
+    object-fit: cover; /* Memotong bagian lebih agar gambar tidak gepeng/stretch */
+    object-position: top center; /* Memastikan wajah/bagian atas karakter tetap terlihat */
     border-radius: 5px;
     margin-bottom: 10px;
-    filter: grayscale(50%);
-    transition: 0.3s;
-}
-
-.team-card:hover img {
-    filter: grayscale(0%);
 }
 
 /* SOCIAL MEDIA SECTION */
