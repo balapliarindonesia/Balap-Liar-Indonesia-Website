@@ -17,7 +17,7 @@ const teamMembers = [
     { name: "Kudungga", image: "images/RIVAL_22.png" },
     { name: "Arogan", image: "images/RIVAL_23.png" },
     { name: "Initial R", image: "images/RIVAL_24.png" },
-    { name: "Fajri", image: "images/RIVAL_25.png" },
+    { name: "Ritsuki Fajri", image: "images/RIVAL_25.png" },
     { name: "AditBlue", image: "images/RIVAL_26.png" },
     { name: "Ixillent", image: "images/RIVAL_27.png" },
     { name: "Shiro", image: "images/shiro.png" },
@@ -49,4 +49,5 @@ links.forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
 
