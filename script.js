@@ -50,5 +50,89 @@ links.forEach(link => {
     });
 });
 
+// ==========================================
+// 4. IMAGE COMPARISON SLIDER & CAROUSEL LOGIC
+// ==========================================
+const comparisonData = [
+    { id: "comp1", title: "Bus Station", before: "images/comparison/BUS 1.2.png", after: "images/comparison/BUS 1.3.png" },
+    { id: "comp2", title: "Indo Balap", before: "images/comparison/INDOBALAP 1.2.png", after: "images/comparison/INDOBALAP 1.3.png" },
+    { id: "comp3", title: "Kota Area 1", before: "images/comparison/KOTA1 1.2.png", after: "images/comparison/KOTA1 1.3.png" },
+    { id: "comp4", title: "Kota Area 2", before: "images/comparison/KOTA2 1.2.png", after: "images/comparison/KOTA2 1.3.png" },
+    { id: "comp5", title: "NFS BLID", before: "images/comparison/NFSBLID 1.2.png", after: "images/comparison/NFSBLID 1.3.png" },
+    { id: "comp6", title: "Pantai", before: "images/comparison/PANTAI 1.2.png", after: "images/comparison/PANTAI 1.3.png" },
+    { id: "comp7", title: "Pertamina", before: "images/comparison/PERTAMINA 1.2.png", after: "images/comparison/PERTAMINA 1.3.png" }
+];
+
+const comparisonGrid = document.getElementById('comparison-grid');
+const slideIndicator = document.getElementById('slide-indicator');
+
+// 4A. Render HTML untuk setiap gambar
+comparisonData.forEach((data, index) => {
+    const compContainer = document.createElement('div');
+    // Tambahkan class 'active' hanya pada elemen pertama
+    compContainer.className = `comp-item ${index === 0 ? 'active' : ''}`; 
+    
+    compContainer.innerHTML = `
+        <h3 class="comp-title">${data.title}</h3>
+        <div class="img-comp-container" style="--slider-pos: 50%;">
+            <img src="${data.after}" alt="BLID 1.3" class="img-comp-base" loading="lazy">
+            
+            <img src="${data.before}" alt="BLID 1.2" class="img-comp-overlay" loading="lazy">
+            
+            <input type="range" min="0" max="100" value="50" class="img-comp-slider">
+            
+            <div class="img-comp-line"></div>
+            <div class="img-comp-handle"><i class="fas fa-arrows-alt-h"></i></div>
+
+            <div class="badge badge-left">BLID 1.2</div>
+            <div class="badge badge-right">BLID 1.3</div>
+        </div>
+    `;
+    comparisonGrid.appendChild(compContainer);
+});
+
+// 4B. Logika Geser Garis Pemisah (Slider Before/After)
+const sliders = document.querySelectorAll('.img-comp-slider');
+sliders.forEach(slider => {
+    slider.addEventListener('input', (e) => {
+        // Mengubah CSS variable '--slider-pos' sesuai posisi input range
+        const container = e.target.closest('.img-comp-container');
+        container.style.setProperty('--slider-pos', `${e.target.value}%`);
+    });
+});
+
+// 4C. Logika Carousel (Next & Previous)
+let currentSlide = 0;
+const slides = document.querySelectorAll('.comp-item');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+
+function updateCarousel() {
+    // Sembunyikan semua slide
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Tampilkan slide yang sedang aktif
+    slides[currentSlide].classList.add('active');
+    
+    // Reset posisi garis pemisah ke tengah (50%) tiap ganti gambar
+    const activeSlider = slides[currentSlide].querySelector('.img-comp-slider');
+    activeSlider.value = 50;
+    slides[currentSlide].querySelector('.img-comp-container').style.setProperty('--slider-pos', '50%');
+    
+    // Update teks indikator (misal: 2 / 7)
+    slideIndicator.innerText = `${currentSlide + 1} / ${slides.length}`;
+}
+
+nextBtn.addEventListener('click', () => {
+    currentSlide++;
+    if (currentSlide >= slides.length) currentSlide = 0; // Balik ke awal jika sudah mentok
+    updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+    currentSlide--;
+    if (currentSlide < 0) currentSlide = slides.length - 1; // Balik ke akhir jika di gambar pertama
+    updateCarousel();
+});
 
 
