@@ -54,13 +54,13 @@ links.forEach(link => {
 // 4. IMAGE COMPARISON SLIDER & CAROUSEL LOGIC
 // ==========================================
 const comparisonData = [
-    { id: "comp1", title: "Bus Station", before: "images/comparison/BUS 1.2.png", after: "images/comparison/BUS 1.3.png" },
-    { id: "comp2", title: "Indo Balap", before: "images/comparison/INDOBALAP 1.2.png", after: "images/comparison/INDOBALAP 1.3.png" },
-    { id: "comp3", title: "Kota Area 1", before: "images/comparison/KOTA1 1.2.png", after: "images/comparison/KOTA1 1.3.png" },
-    { id: "comp4", title: "Kota Area 2", before: "images/comparison/KOTA2 1.2.png", after: "images/comparison/KOTA2 1.3.png" },
-    { id: "comp5", title: "NFS BLID", before: "images/comparison/NFSBLID 1.2.png", after: "images/comparison/NFSBLID 1.3.png" },
-    { id: "comp6", title: "Pantai", before: "images/comparison/PANTAI 1.2.png", after: "images/comparison/PANTAI 1.3.png" },
-    { id: "comp7", title: "Pertamina", before: "images/comparison/PERTAMINA 1.2.png", after: "images/comparison/PERTAMINA 1.3.png" }
+    { id: "comp1", title: "Bus Station", before: "images/comparison/BUS 1.2.jpeg", after: "images/comparison/BUS 1.3.jpeg" },
+    { id: "comp2", title: "Indo Balap", before: "images/comparison/INDOBALAP 1.2.jpeg", after: "images/comparison/INDOBALAP 1.3.jpeg" },
+    { id: "comp3", title: "Kota Area 1", before: "images/comparison/KOTA1 1.2.jpeg", after: "images/comparison/KOTA1 1.3.jpeg" },
+    { id: "comp4", title: "Kota Area 2", before: "images/comparison/KOTA2 1.2.jpeg", after: "images/comparison/KOTA2 1.3.jpeg" },
+    { id: "comp5", title: "NFS BLID", before: "images/comparison/NFSBLID 1.2.jpeg", after: "images/comparison/NFSBLID 1.3.jpeg" },
+    { id: "comp6", title: "Pantai", before: "images/comparison/PANTAI 1.2.jpeg", after: "images/comparison/PANTAI 1.3.jpeg" },
+    { id: "comp7", title: "Pertamina", before: "images/comparison/PERTAMINA 1.2.jpeg", after: "images/comparison/PERTAMINA 1.3.jpeg" }
 ];
 
 const comparisonGrid = document.getElementById('comparison-grid');
@@ -134,5 +134,6 @@ prevBtn.addEventListener('click', () => {
     if (currentSlide < 0) currentSlide = slides.length - 1; // Balik ke akhir jika di gambar pertama
     updateCarousel();
 });
+
 
 
