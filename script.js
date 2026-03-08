@@ -1,5 +1,3 @@
-import { Analytics } from "@vercel/analytics/next"
-Analytics();
 // 1. Mobile Menu Toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
